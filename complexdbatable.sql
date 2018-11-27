@@ -194,3 +194,13 @@ WHERE sex = 'F' AND birth_day > '1970-01-01';
 SELECT AVG(salary)
 FROM employee;
 
+-- Find the average of all employee's salaries WHERE sex is male
+SELECT AVG(salary)
+FROM employee
+WHERE sex = 'M';
+
+-- # finding the SUM 
+-- Find the SUM of all employee's salaries
+SELECT SUM(salary)
+FROM employee;
+
