@@ -63,9 +63,21 @@ LIMIT 3;
 
 --Use of Comparison Operators to querry the DB*
 -- <, >, <=, >=, =, <>, AND, OR
+-- <> ( not equal.)
 
 --Using the IN Statement in the select
 SELECT *
 FROM student
 WHERE name IN ('Jose', 'Sebastian', 'Marie');
+
+-- Using AND, WHERE and AND all together to make a complex querry.
+SELECT *
+FROM student
+WHERE name IN ('Jose', 'Sebastian', 'Marie') AND student_id > 1;
+
+
+-- ### USING A MORE COMPLEX DATABASE SCHEMA
+-- A company DATABASE
+
+
 
