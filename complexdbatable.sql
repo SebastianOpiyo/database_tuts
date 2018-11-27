@@ -149,7 +149,48 @@ SELECT * FROM client;
 SELECT * FROM works_with;
 
 
+-- more on SELECT 
+
+-- 1. Find all employees ordered by salary
+SELECT * 
+FROM employee
+ORDER BY salary DESC;
+
+-- find the first and last name of all employees
+SELECT emp_id, first_name, last_name
+FROM employee;
+
+-- find the first as forename and last as surname name of all employees
+SELECT emp_id, first_name AS forename, last_name AS surname
+FROM employee;
+
+-- Find out all the different genders using DISTINCT
+SELECT DISTINCT sex 
+FROM employee;
 
 
+--  ##Using DISTINCT
+-- Find out all the different genders
+SELECT DISTINCT branch_name 
+FROM branch;
 
+--  ##Using COUNT
+-- Find the number of employees
+
+SELECT COUNT(emp_id) 
+FROM employee;
+
+-- ## Find out how many employees have supervisor ID
+SELECT COUNT(super_id)
+FROM employee;
+
+-- Find the number of female employees born after 1970
+SELECT COUNT(emp_id)
+FROM employee
+WHERE sex = 'F' AND birth_day > '1970-01-01';
+
+-- # finding the AVERAGE 
+-- Find the average of all employee's salaries
+SELECT AVG(salary)
+FROM employee;
 
