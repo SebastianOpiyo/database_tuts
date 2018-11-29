@@ -9,4 +9,4 @@ I started with a basic table that is detailed in the basicsql.sql file
 
 ## COMPLEX
 Then I moved to something more than trivial. There is more than one table in the company database
-conatained in the complexdbatable.sql
+contained in the complexdbatable.sql
