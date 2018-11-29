@@ -204,3 +204,65 @@ WHERE sex = 'M';
 SELECT SUM(salary)
 FROM employee;
 
+
+-- AGGREGATION
+-- Find out how many males and females there are
+SELECT COUNT(sex), sex
+FROM employee
+GROUP BY sex;  -- Ensures there is a split of count between the male and female
+
+-- Find the total sale for each salesman
+SELECT SUM(total_sales), emp_id
+FROM works_with
+GROUP BY emp_id;
+
+-- Find the total amount spend by each client 
+SELECT SUM(total_sales), client_id
+FROM works_with
+GROUP BY client_id;
+
+-- WILDCARDS USE FOR SEARCH.
+-- Are used to serch the database for specified chararacters. They include:
+-- % = any # characters, _ = for one character
+
+-- Find any Clients who are an LLC
+SELECT *
+FROM client
+WHERE client_name LIKE '%LLC'; -- 'LIKE' Is used with wildcards for searches
+
+-- Find any Branch suppliers who are in the label business
+SELECT *
+FROM branch_supplier         
+WHERE supplier_name LIKE '%Label%'
+
+-- Find any employees born in October
+SELECT *
+FROM employee         
+WHERE birth_day LIKE '%-10-%';
+
+--Alternatively
+-- Find any employees born in October
+SELECT *
+FROM employee         
+WHERE birth_day LIKE '____-10%'; -- # The underscore matches any of the single characters 
+
+
+--UNION
+-- Enables for the use of more than one SELECT statement in the querry
+SELECT first_name AS Company_names
+FROM employee
+UNION
+SELECT branch_name
+FROM branch; 
+
+-- Another Example
+-- Find a list of all clients & branch suppliers' names
+SELECT client_name AS Client_Supplier_names, branch_id
+FROM client
+UNION
+SELECT supplier_name AS Client_Supplier_names, branch_id
+FROM branch_supplier
+
+
+
+
