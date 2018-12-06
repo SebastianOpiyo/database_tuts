@@ -269,7 +269,23 @@ SELECT employee.emp_id, employee.first_name, branch.branch_name
 FROM employee
 JOIN branch
 ON employee.emp_id = branch.mgr_id;
--- emp_id(primary key) and branch_id(foreign key) are the same but only in different tables
+-- emp_id(primary key) and mgr_id(foreign key) are the same but only in different tables
+-- not all emp_id are in the mgr_id, the ones only IDs displayed are those found in the branch
+-- managers. This is an inner join.
 
+-- LEFT JOIN
+SELECT employee.emp_id, employee.first_name, branch.branch_name
+FROM employee
+LEFT JOIN branch
+ON employee.emp_id = branch.mgr_id;
 
+-- LEFT JOIN gives a print out of all the information found on the left table (employee)
+
+-- RIGHT JOIN
+-- Does the opposite of the LEFT JOIN
+SELECT employee.emp_id, employee.first_name, branch.branch_name
+FROM employee
+RIGHT JOIN branch
+ON employee.emp_id = branch.mgr_id;
+-- Here we get all the rows from the right table(branch)
 
